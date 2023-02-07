@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>About Me - Arthur Lu</title>
+		<link rel="stylesheet" href="style.css" type="text/css">
+		<style>
+			.flexbox {
+				display: flex;
+				flex-direction: row;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Arthur Lu</h1>
+			<nav>
+				<a href="index.html#about-me"><b>About Me</b></a>
+				<a href="portfolio.html">My Projects</a>
+				<a href="index.html#contact-me">Contact Me</a>
+				<a href="experiments.html">Experiments</a>
+			</nav>
+		</header>
+		<hr>
+		<main>
+			<section class="flexbox">
+					<img height="200" src="images/photo.jpg" alt="A photo of me">
+					<div>
+						<h3>Arthur Lu</h3>
+						<p>
+						Email: learthurgo@gmail.com <br>
+						LinkedIn: <br>
+						Github: <a href="https://github.com/ltcptgeneral">ltcptgeneral</a> <br>
+						</p>
+					</div>
+			</section>
+			<hr>
+			<section id="about-me">
+				<h2>About Me</h2>
+				<p>
+					I am a 3rd year <strong>Computer Engineering</strong> major at the <a href="ucsd.edu">University of California San Diego</a>. 
+					I am interested in Machine Learning, cloud technologies, and distributed computing. 
+					I have experience with common technologies like Docker, lxc, nginx, and VMWare ESXi.
+
+					<!-- This span will have some special formatting, maybe a different color -->
+					<!-- This span could be automatically populated based on the most recent commit to github? -->
+					I am currently working on <span id="current-project"><a href="https://github.com/tronnet-gh/ProxmoxAAS-Client">ProxmoxAAS-Client</a>, a simplified user interface for users of a Proxmox based compute on demand service.</span>
+
+					<em>I also run <a href="https://tronnet.net">tronnet</a>, a cheap and personalized virtual lab provider.</em>
+				</p>
+			</section>
+			<section id="tech-skills">
+				<h2>Languages and Skills</h2>
+				<table>
+					<caption>List of languages and experience</caption>
+					<colgroup>
+						<!-- There will be styling on this table, but I'm out of styling for this assignment -->
+						<col span="1">
+						<col span="2">
+					</colgroup>
+					<tr>
+						<th>Language</th>
+						<th>Experience</th>
+						<th>Relevant Frameworks</th>
+					</tr>
+					<tr>
+						<td>C/C++</td>
+						<td>2 Years</td>
+						<td>gcc, make, Visual Studio</td>
+					</tr>
+					<tr>
+						<td>Java</td>
+						<td>4 Years</td>
+						<td>Android Studio</td>
+					</tr>
+					<tr>
+						<td>Python</td>
+						<td>5 Years</td>
+						<td>PyTorch, scipy, numpy, scikit-learn</td>
+					</tr>
+					<tr>
+						<td>Javascript</td>
+						<td>1 Year</td>
+						<td>ES6, NodeJS, express</td>
+					</tr>
+				</table>
+			</section>
+			<hr>
+			<section id="contact-me">
+				<h2>Contact Me</h2>
+				<p><i>The best way to get in touch is through email.</i></p>
+				<form>
+					<fieldset>
+						<legend>Info</legend>
+						<label for="name">Name</label>
+						<input id="name" name="name" required>
+						<label for="email">Email</label>
+						<input id="email" name="email" type="email" required>
+						<label for="phone" >Phone</label>
+						<input id="phone" name="phone" type="tel">
+					</fieldset>
+					<fieldset>
+						<legend>Message</legend>
+						<textarea id="message" required></textarea>
+					</fieldset>
+					<button type="submit">Send</button>
+				</form>
+			</section>
+		</main>
+		<hr>
+		<footer>
+			<p>&copy;2023 Arthur Lu</p>
+		</footer>
+	</body>
+</html>

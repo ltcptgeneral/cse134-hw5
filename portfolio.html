@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>My Projects - Arthur Lu</title>
+		<link rel="stylesheet" href="style.css" type="text/css">
+		<style>
+			.flexbox {
+				display: flex;
+				flex-direction: row;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Arthur Lu</h1>
+			<nav>
+				<a href="index.html#about-me">About Me</a>
+				<a href="portfolio.html"><b>My Projects</b></a>
+				<a href="index.html#contact-me">Contact Me</a>
+				<a href="experiments.html">Experiments</a>
+			</nav>
+		</header>
+		<hr>
+		<main>
+			<div class="flexbox">
+				<!-- Sample project instances included, eventually it wil be populated automatically -->
+				<article>
+					<!-- The link around the project title will eventually be an onclick listener on the entire article -->
+					<h2><a href="project.html">Project 1</a></h2>
+					<p>sample project</p>
+					<ul>
+						<li>tag 1</li>
+						<li>tag 2</li>
+						<li>tag 3</li>
+					</ul>
+				</article>
+				<article>
+					<h2><a href="project.html">Project 2</a></h2>
+					<p>sample project</p>
+					<ul>
+						<li>tag 1</li>
+						<li>tag 2</li>
+						<li>tag 3</li>
+					</ul>
+				</article>
+				<article>
+					<h2><a href="project.html">Project 3</a></h2>
+					<p>sample project</p>
+					<ul>
+						<li>tag 1</li>
+						<li>tag 2</li>
+						<li>tag 3</li>
+					</ul>
+				</article>
+			</div>
+		</main>
+		<hr>
+		<footer>
+			<p>&copy;2023 Arthur Lu</p>
+		</footer>
+
+		<!-- This template will be used later by JS to create a custom element to hold each project preview -->
+		<template id="project-article">
+			<article>
+				<h2 id="project-name"></h2>
+				<p id="project-desc"></p>
+				<ul id="project-tags">
+				</ul>
+			</article>
+		</template>
+	</body>
+</html>
