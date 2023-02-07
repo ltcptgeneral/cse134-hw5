@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>About Me - Arthur Lu</title>
+		<link rel="stylesheet" href="style.css" type="text/css">
+	</head>
+	<body>
+		<header class="flex" style="column-gap: 20px;">
+			<h1>Arthur Lu</h1>
+			<nav>
+				<a href="index.html#about-me" aria-selected="true">About Me</a>
+				<a href="portfolio.html" aria-selected="false">My Projects</a>
+				<a href="index.html#contact-me" aria-selected="false">Contact Me</a>
+			</nav>
+		</header>
+		<hr>
+		<main>
+			<section id="buisness-card">
+					<img height="200" src="images/photo.jpg" alt="A photo of me" style="border-radius: 50%;">
+					<div>
+						<h3>Arthur Lu</h3>
+						<ul>
+						<li><img src="images/email.svg" alt="Email"></i><a href="mailto:root@tronnet.net">root@tronnet.net</a></li>
+						<li><img src="images/github.svg" alt="GitHub"></i><a href="https://github.com/ltcptgeneral/">ltcptgeneral</a></li>
+						</ul>
+					</div>
+			</section>
+			<div>
+				<section id="contact-me">
+					<h2>Contact Me</h2>
+					<p><i>The best way to get in touch is through email.</i></p>
+					<form>
+						<fieldset>
+							<legend>Info</legend>
+							<label for="name">Name</label>
+							<input id="name" name="name" required>
+							<label for="email">Email</label>
+							<input id="email" name="email" type="email" required>
+							<label for="phone" >Phone</label>
+							<input id="phone" name="phone" type="tel">
+						</fieldset>
+						<fieldset>
+							<legend>Message</legend>
+							<textarea id="message" required></textarea>
+						</fieldset>
+						<button type="submit">Send</button>
+					</form>
+				</section>
+			</div>
+		</main>
+		<hr>
+		<footer>
+			<p>&copy;2023 Arthur Lu</p>
+		</footer>
+	</body>
+</html>

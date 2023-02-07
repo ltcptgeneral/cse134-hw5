@@ -1,0 +1,95 @@
+/*Set the font amily to monospace, and set default text sizes for commonly h1, h2, p*/
+* {
+	font-family: monospace;
+	font-size: 1.1rem;
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+h2 {
+	font-size: 1.75rem;
+}
+
+@media screen and (min-width: 1080px){
+	header, main, footer {
+		max-width: 65%;
+		width: fit-content;
+		margin: auto;
+	}
+	main {
+		display: flex;
+		flex-direction: row;
+		column-gap: 10%;
+	}
+}
+@media screen and (min-width: 702px) and (max-width: 1080px) {
+	header, main, footer {
+		max-width: 702px;
+		margin: auto;
+	}
+	#buisness-card {
+		display: flex;
+		flex-direction: row;
+		column-gap: 20px;
+	}
+}
+@media screen and (max-width: 702px) {
+	header, main, footer {
+		max-width: 100%;
+		margin: auto;
+	}
+	#buisness-card {
+		display: flex;
+		flex-direction: row;
+		column-gap: 20px;
+	}
+}
+
+/* Restrict all children of main to 60ch*/
+main > * {
+	max-width: 60ch;
+}
+
+#buisness-card ul {
+	list-style-type: none;
+	padding: 0px;
+}
+
+#buisness-card ul li {
+	font-size: 1rem;
+	white-space: nowrap;
+	display: flex;
+	align-items: center;
+}
+
+#buisness-card ul li * {
+	font-size: 1rem;
+	height: 1rem;
+	margin: 10px 5px 10px 5px;
+	color: #000;
+	text-decoration: none;
+}
+
+nav a {
+	color: #666;
+	text-decoration: none;
+	margin-left: 10px;
+	font-size: 1.5rem;
+}
+
+nav a[aria-selected="true"] {
+	font-weight: bold;
+}
+
+.flex {
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	align-items: baseline;
+}
+
+a {
+	white-space: nowrap;
+}
