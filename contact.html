@@ -5,13 +5,18 @@
 		<meta name="viewport" content="width=device-width">
 		<title>About Me - Arthur Lu</title>
 		<link rel="stylesheet" href="style.css" type="text/css">
+		<style>
+			fieldset {
+				border-radius: 5px;
+			}
+		</style>
 	</head>
 	<body>
-		<header class="flex" style="column-gap: 20px;">
+		<header>
 			<h1>Arthur Lu</h1>
 			<nav>
-				<a href="index.html#about-me" aria-selected="true">About Me</a>
-				<a href="index.html#contact-me" aria-selected="false">Contact Me</a>
+				<a href="index.html" aria-selected="false">About Me</a>
+				<a href="contact.html" aria-selected="true">Contact Me</a>
 				<a href="portfolio.html" aria-selected="false">My Projects</a>
 			</nav>
 		</header>
@@ -31,8 +36,8 @@
 				<section id="contact-me">
 					<h2>Contact Me</h2>
 					<p><i>The best way to get in touch is through email.</i></p>
-					<form>
-						<fieldset>
+					<form style="text-align: center;">
+						<fieldset style="display: grid; grid-template-columns: auto 1fr; column-gap: 10px;">
 							<legend>Info</legend>
 							<label for="name">Name</label>
 							<input id="name" name="name" required>
@@ -43,15 +48,16 @@
 						</fieldset>
 						<fieldset>
 							<legend>Message</legend>
-							<textarea id="message" required></textarea>
+							<textarea id="message" style="width: 100%;" required></textarea>
 						</fieldset>
-						<button type="submit">Send</button>
+						<button type="submit" style="margin-top: 10px;">Send</button>
+						
 					</form>
 				</section>
 			</div>
 		</main>
-		<hr>
 		<footer>
+			<hr>
 			<p>&copy;2023 Arthur Lu</p>
 		</footer>
 	</body>

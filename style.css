@@ -12,10 +12,9 @@ h2 {
 	font-size: 1.75rem;
 }
 
-@media screen and (min-width: 1080px){
-	header, main, footer {
+@media screen and (min-width: 1080px){ /* Desktop */
+	header, main {
 		max-width: 65%;
-		width: fit-content;
 		margin: auto;
 	}
 	main {
@@ -23,9 +22,12 @@ h2 {
 		flex-direction: row;
 		column-gap: 10%;
 	}
+	#buisness-card > *{
+		margin-top: 20px;
+	}
 }
-@media screen and (min-width: 702px) and (max-width: 1080px) {
-	header, main, footer {
+@media screen and (min-width: 702px) and (max-width: 1080px) { /* Laptop or Tablet */
+	header, main {
 		max-width: 702px;
 		margin: auto;
 	}
@@ -35,8 +37,8 @@ h2 {
 		column-gap: 20px;
 	}
 }
-@media screen and (max-width: 702px) {
-	header, main, footer {
+@media screen and (max-width: 702px) { /* Phone */
+	header, main {
 		max-width: 100%;
 		margin: auto;
 	}
@@ -45,11 +47,28 @@ h2 {
 		flex-direction: row;
 		column-gap: 20px;
 	}
+	nav {
+		display: flex;
+		flex-direction: column;
+	}
+	body{
+		padding: 20px;
+	}
 }
 
-/* Restrict all children of main to 60ch*/
-main > * {
+header {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: baseline;
+}
+
+/* Restrict p content 60 character width*/
+p {
 	max-width: 60ch;
+}
+
+#buisness-card h3 {
+	margin-top: 0px;
 }
 
 #buisness-card ul {
@@ -73,23 +92,30 @@ main > * {
 }
 
 nav a {
-	color: #666;
-	text-decoration: none;
+	color: #000;
+	text-decoration: underline 0.15em rgba(0, 0, 0, 0);
+  	transition: text-decoration-color 250ms;
 	margin-left: 10px;
 	font-size: 1.5rem;
+}
+
+nav a:hover {
+	text-decoration-color: rgba(0, 0, 0, 1);
 }
 
 nav a[aria-selected="true"] {
 	font-weight: bold;
 }
 
-.flex {
-	display: flex;
-	flex-direction: row;
-	justify-content: left;
-	align-items: baseline;
-}
-
 a {
 	white-space: nowrap;
+}
+
+footer {
+	width: 100%;
+	text-align: center;
+}
+
+footer p {
+	max-width: 100%;
 }

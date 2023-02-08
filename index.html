@@ -5,13 +5,18 @@
 		<meta name="viewport" content="width=device-width">
 		<title>About Me - Arthur Lu</title>
 		<link rel="stylesheet" href="style.css" type="text/css">
+		<style>
+			th {
+				text-align: left;
+			}
+		</style>
 	</head>
 	<body>
-		<header class="flex" style="column-gap: 20px;">
+		<header>
 			<h1>Arthur Lu</h1>
 			<nav>
-				<a href="index.html#about-me" aria-selected="true">About Me</a>
-				<a href="index.html#contact-me" aria-selected="false">Contact Me</a>
+				<a href="index.html" aria-selected="true">About Me</a>
+				<a href="contact.html" aria-selected="false">Contact Me</a>
 				<a href="portfolio.html" aria-selected="false">My Projects</a>
 			</nav>
 		</header>
@@ -45,7 +50,7 @@
 				<hr>
 				<section id="tech-skills">
 					<h2>Languages and Skills</h2>
-					<table>
+					<table style="border-spacing: 20px;">
 						<caption>List of languages and experience</caption>
 						<colgroup>
 							<!-- There will be styling on this table, but I'm out of styling for this assignment -->
@@ -75,14 +80,14 @@
 						<tr>
 							<td>Javascript</td>
 							<td>1 Year</td>
-							<td>ES6, NodeJS, express</td>
+							<td>ES6, NodeJS, express.js</td>
 						</tr>
 					</table>
 				</section>
 			</div>
 		</main>
-		<hr>
 		<footer>
+			<hr>
 			<p>&copy;2023 Arthur Lu</p>
 		</footer>
 	</body>
