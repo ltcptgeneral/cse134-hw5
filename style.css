@@ -1,44 +1,52 @@
 :root {
 	--bg-color: white;
+	--nav-bar-color: black;
 	--text-color: black;
-	--nav-link-color: #444;
-	--nav-link-underscore-inactive: rgba(64, 64, 64, 0);
-	--nav-link-underscore-active: rgba(64, 64, 64, 1);
+	--text-color-inv: white;
+	--nav-link-color: #FFF;
+	--nav-link-underscore-inactive: rgba(255, 255, 255, 0);
+	--nav-link-underscore-active: rgba(255, 255, 255, 1);
+}
+/* Use a div to control entire site layout. The issue is the footer, which I want to always be at the bottom */
+#layout-wrapper {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+#header-full, footer { /* block header and footer from growing */
+	flex-grow: 0;
+}
+main { /* allow main to fill the rest of the soace */
+	flex-grow: 1;
 }
 
-/*Set the font amily to monospace, and set default text sizes for commonly h1, h2, p*/
+/*Set the font family to monospace, and set default text sizes for commonly h1, h2, p*/
 * {
 	font-family: 'Courier New', Courier, monospace;
 	font-size: 1rem;
 }
-
 h1 {
 	font-size: 2rem;
+	color: white;
 }
-
 h2 {
 	font-size: 1.75rem;
 }
-
 p {
-	line-height: 150%;
+	line-height: 1.5em;
 }
 
+/* give hr some margins */
 hr {
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 }
 
-#buisness-card {
-	display: flex;
-	flex-direction: row;
-	column-gap: 20px;
-	align-items: center;
-}
-
 body {
 	background-color: var(--bg-color);
 	color: var(--text-color);
+	margin: 0px;
+	padding: 0px;
 }
 
 @media screen and (min-width: 1600px){ /* Desktop */
@@ -52,6 +60,7 @@ body {
 		flex-direction: row;
 		align-items: flex-start;
 		margin-top: 2rem;
+		column-gap: 5%;
 	}
 	main section > *:first-child {
 		margin: 0px;
@@ -92,10 +101,27 @@ body {
 	}
 }
 
+#header-full {
+	background-color: var(--nav-bar-color);
+	padding: 20px;
+	width: 100%;
+}
+
 header {
 	display: grid;
 	grid-template-columns: 1fr auto;
 	align-items: baseline;
+}
+
+main {
+	padding: 20px;
+}
+
+#buisness-card {
+	display: flex;
+	flex-direction: row;
+	column-gap: 20px;
+	align-items: center;
 }
 
 #buisness-card h3 {
@@ -133,6 +159,7 @@ nav a {
   	transition: text-decoration-color 250ms;
 	margin-left: 4ch;
 	font-size: 1.5rem;
+	font-weight: bold;
 }
 
 nav a:hover {
@@ -140,7 +167,7 @@ nav a:hover {
 }
 
 nav a[aria-selected="true"] {
-	font-weight: bold;
+	text-decoration: underline 0.15em var(--nav-link-underscore-active);
 }
 
 a {
@@ -150,8 +177,14 @@ a {
 footer {
 	width: 100%;
 	text-align: center;
+	background-color: var(--nav-bar-color);
+	color: var(--text-color-inv);
+	padding: 20px;
 }
 
 footer p {
 	max-width: 100%;
+	font-weight: 900;
+	font-size: 1.25rem;
+	margin: 0px;
 }
