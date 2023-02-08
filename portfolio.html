@@ -5,6 +5,33 @@
 		<meta name="viewport" content="width=device-width">
 		<title>My Projects - Arthur Lu</title>
 		<link rel="stylesheet" href="style.css" type="text/css">
+		<style>
+			article {
+				height: min-content;
+			}
+			article > h2 {
+				line-height: 1.75rem;
+				margin-top: 0px;
+				margin-bottom: 10px;
+			}
+			article > h2 > a {
+				font-size: 1.75rem;
+				text-decoration: underline 0.15em rgba(0, 0, 0, 0);
+				transition: text-decoration-color 250ms;
+			}
+			article > h2 > a:hover {
+				text-decoration-color: rgba(0, 0, 255, 1);
+			}
+			article p {
+				margin: 10px;
+			}
+			article ul {
+				list-style: none;
+				display: flex;
+				flex-direction: row;
+				column-gap: 10px;
+			}
+		</style>
 	</head>
 	<body>
 		<header>
@@ -32,8 +59,8 @@
 				<!-- Sample project instances included, eventually it wil be populated automatically -->
 				<article>
 					<!-- The link around the project title will eventually be an onclick listener on the entire article -->
-					<h2><a href="project.html">Project 1</a></h2>
-					<p>sample project</p>
+					<h2><a href="https://github.com/ltcptgeneral/project1">Project 1</a></h2>
+					<p>sample project 1, a description taken either from the github or readme</p>
 					<ul>
 						<li>tag 1</li>
 						<li>tag 2</li>
@@ -41,8 +68,8 @@
 					</ul>
 				</article>
 				<article>
-					<h2><a href="project.html">Project 2</a></h2>
-					<p>sample project</p>
+					<h2><a href="https://github.com/ltcptgeneral/project2">Project 2</a></h2>
+					<p>sample project 2, a description taken either from the github or readme</p>
 					<ul>
 						<li>tag 1</li>
 						<li>tag 2</li>
@@ -50,8 +77,8 @@
 					</ul>
 				</article>
 				<article>
-					<h2><a href="project.html">Project 3</a></h2>
-					<p>sample project</p>
+					<h2><a href="https://github.com/ltcptgeneral/project3">Project 3</a></h2>
+					<p>sample project 3, a description taken either from the github or readme</p>
 					<ul>
 						<li>tag 1</li>
 						<li>tag 2</li>
