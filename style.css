@@ -21,8 +21,9 @@ h2 {
 		display: flex;
 		flex-direction: row;
 		column-gap: 10%;
+		width: fit-content;
 	}
-	#buisness-card > *{
+	#buisness-card > * {
 		margin-top: 20px;
 	}
 }
@@ -35,6 +36,7 @@ h2 {
 		display: flex;
 		flex-direction: row;
 		column-gap: 20px;
+		align-items: center;
 	}
 }
 @media screen and (max-width: 702px) { /* Phone */
@@ -46,6 +48,7 @@ h2 {
 		display: flex;
 		flex-direction: row;
 		column-gap: 20px;
+		align-items: center;
 	}
 	nav {
 		display: flex;
@@ -68,11 +71,12 @@ p {
 }
 
 #buisness-card h3 {
-	margin-top: 0px;
+	margin: 10px;
 }
 
 #buisness-card ul {
-	list-style-type: none;
+	margin: 10px;
+	list-style: none;
 	padding: 0px;
 }
 
@@ -89,6 +93,10 @@ p {
 	margin: 10px 5px 10px 5px;
 	color: #000;
 	text-decoration: none;
+}
+
+#buisness-card > div {
+	height: fit-content;
 }
 
 nav a {
