@@ -1,6 +1,12 @@
+:root {
+	--bg-color: white;
+	--text-color: black;
+	--link-color: blue;
+}
+
 /*Set the font amily to monospace, and set default text sizes for commonly h1, h2, p*/
 * {
-	font-family: monospace;
+	font-family: 'Courier New', Courier, monospace;
 	font-size: 1rem;
 }
 
@@ -27,8 +33,14 @@ hr {
 	align-items: center;
 }
 
+body {
+	width: 100%;
+	margin: 0px;
+	padding: 10px;
+}
+
 @media screen and (min-width: 1200px){ /* Desktop */
-	header, main, footer {
+	header, main {
 		max-width: 50%;
 		margin: auto;
 	}
@@ -53,7 +65,7 @@ hr {
 	}
 }
 @media screen and (min-width: 600px) and (max-width: 1200px) { /* Laptop or Tablet */
-	header, main, footer {
+	header, main {
 		max-width: 600px;
 		margin: auto;
 	}
@@ -63,13 +75,17 @@ hr {
 	}
 }
 @media screen and (max-width: 540px) { /* Phone */
-	header, main, footer {
+	header, main {
 		width: 100%;
 		margin: auto;
 	}
 	nav {
 		display: flex;
 		flex-direction: column;
+	}
+	#buisness-card img {
+		max-width: 35%;
+		height: auto;
 	}
 }
 
