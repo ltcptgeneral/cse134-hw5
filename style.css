@@ -1,7 +1,7 @@
 /*Set the font amily to monospace, and set default text sizes for commonly h1, h2, p*/
 * {
 	font-family: monospace;
-	font-size: 1.1rem;
+	font-size: 1rem;
 }
 
 h1 {
@@ -12,50 +12,64 @@ h2 {
 	font-size: 1.75rem;
 }
 
-@media screen and (min-width: 1080px){ /* Desktop */
-	header, main {
-		max-width: 65%;
+p {
+	line-height: 150%;
+}
+
+hr {
+	margin: 1rem;
+}
+
+#buisness-card {
+	display: flex;
+	flex-direction: row;
+	column-gap: 20px;
+	align-items: center;
+}
+
+@media screen and (min-width: 1200px){ /* Desktop */
+	header, main, footer {
+		max-width: 50%;
 		margin: auto;
 	}
 	main {
-		display: flex;
-		flex-direction: row;
-		column-gap: 10%;
 		width: fit-content;
-	}
-	#buisness-card > * {
-		margin-top: 20px;
-	}
-}
-@media screen and (min-width: 702px) and (max-width: 1080px) { /* Laptop or Tablet */
-	header, main {
-		max-width: 702px;
-		margin: auto;
-	}
-	#buisness-card {
 		display: flex;
 		flex-direction: row;
-		column-gap: 20px;
-		align-items: center;
+		align-items: flex-start;
+		margin-top: 2rem;
 	}
-}
-@media screen and (max-width: 702px) { /* Phone */
-	header, main {
-		max-width: 100%;
-		margin: auto;
+	main section > *:first-child {
+		margin: 0px;
+	}
+	main section > * {
+		margin: 1rem;
+	}
+	main > div { /* set width of areas in main to 80 characters */
+		width: 80ch;
 	}
 	#buisness-card {
-		display: flex;
-		flex-direction: row;
-		column-gap: 20px;
-		align-items: center;
+		flex-direction: column;
+	}
+}
+@media screen and (min-width: 600px) and (max-width: 1200px) { /* Laptop or Tablet */
+	header, main, footer {
+		max-width: 600px;
+		margin: auto;
 	}
 	nav {
 		display: flex;
 		flex-direction: column;
 	}
-	body{
-		padding: 20px;
+}
+@media screen and (max-width: 540px) { /* Phone */
+	header, main, footer {
+		width: 100%;
+		margin: auto;
+	}
+	nav {
+		display: flex;
+		flex-direction: column;
 	}
 }
 
@@ -63,11 +77,6 @@ header {
 	display: grid;
 	grid-template-columns: 1fr auto;
 	align-items: baseline;
-}
-
-/* Restrict p content 60 character width*/
-p {
-	max-width: 60ch;
 }
 
 #buisness-card h3 {
