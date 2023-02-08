@@ -85,8 +85,9 @@ body {
 		display: flex;
 		flex-direction: column;
 	}
-	#buisness-card img {
-		max-width: 35%;
+	#buisness-card > img {
+		max-width: 200px;
+		width: 35%;
 		height: auto;
 	}
 }
