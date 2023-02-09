@@ -12,6 +12,7 @@
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
+	width: 100%;
 }
 #header-full, footer { /* block header and footer from growing */
 	flex-grow: 0;
@@ -34,6 +35,7 @@ h2 {
 }
 p {
 	line-height: 1.5em;
+	max-width: 60ch; /* restrict paragraphs to 60 characters */
 }
 
 /* give hr some margins */
@@ -42,8 +44,9 @@ hr {
 	margin-bottom: 1rem;
 }
 
+/* Set background color, default text color remove body margins and padding */
 body {
-	background-color: var(--bg-color);
+	background-color: var(--bg-color); 
 	color: var(--text-color);
 	margin: 0px;
 	padding: 0px;
@@ -72,7 +75,10 @@ body {
 		width: 80ch;
 	}
 	#buisness-card {
+		display: flex;
 		flex-direction: column;
+		column-gap: 20px;
+		align-items: center;
 	}
 }
 @media screen and (min-width: 800px) and (max-width: 1600px) { /* Laptop or Tablet */
@@ -84,15 +90,26 @@ body {
 		display: flex;
 		flex-direction: column;
 	}
+	#buisness-card {
+		display: flex;
+		flex-direction: row;
+		column-gap: 20px;
+		align-items: center;
+	}
 }
 @media screen and (max-width: 800px) { /* Phone */
 	header, main {
-		width: 100%;
 		margin: auto;
 	}
 	nav {
 		display: flex;
 		flex-direction: column;
+	}
+	#buisness-card {
+		display: flex;
+		flex-direction: row;
+		column-gap: 20px;
+		align-items: center;
 	}
 	#buisness-card > img {
 		max-width: 200px;
@@ -104,7 +121,6 @@ body {
 #header-full {
 	background-color: var(--nav-bar-color);
 	padding: 20px;
-	width: 100%;
 }
 
 header {
@@ -115,13 +131,6 @@ header {
 
 main {
 	padding: 20px;
-}
-
-#buisness-card {
-	display: flex;
-	flex-direction: row;
-	column-gap: 20px;
-	align-items: center;
 }
 
 #buisness-card h3 {
@@ -175,7 +184,6 @@ a {
 }
 
 footer {
-	width: 100%;
 	text-align: center;
 	background-color: var(--nav-bar-color);
 	color: var(--text-color-inv);
@@ -183,8 +191,7 @@ footer {
 }
 
 footer p {
-	max-width: 100%;
 	font-weight: 900;
 	font-size: 1.25rem;
-	margin: 0px;
+	margin: auto;
 }
