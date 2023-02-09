@@ -175,7 +175,7 @@ nav a:hover {
 	text-decoration-color: var(--nav-link-underscore-active);
 }
 
-nav a[aria-selected="true"] {
+nav a[aria-current="page"] {
 	text-decoration: underline 0.15em var(--nav-link-underscore-active);
 }
 
