@@ -74,7 +74,11 @@
 		</div>
 		<main>
 			<section id="buisness-card">
-				<img width="200" src="images/photo.webp" alt="A portrait photo of Arthur Lu" style="border-radius: 50%;">
+				<picture>
+					<source media="screen and (min-width: 480px)" srcset="images/photo_200px.webp">
+					<source media="screen and (min-width: 0px)" srcset="images/photo_100px.webp">
+					<img src="images/photo.webp" alt="A portrait photo of Arthur Lu" style="border-radius: 50%;">
+				</picture>
 				<div>
 					<h3>Arthur Lu</h3>
 					<ul>
