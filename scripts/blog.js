@@ -46,7 +46,7 @@ function populatePosts () {
 		post.querySelector(".delete").addEventListener("click", handleDeletePost.bind(post));
 		container.append(post)
 	});
-}1
+}
 
 function addPost (post) {
 	post.id = getNextID();
