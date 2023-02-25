@@ -7,13 +7,8 @@
 		<link rel="icon" type="image/x-icon" href="/images/favicon.svg">
 		<script src="scripts/customdialogs.js" type="module"></script>
 		<script type="text/javascript" src="DOMpurify/purify.min.js"></script>
-		<style>
-			.hidden {
-				display: none;
-			}
-		</style>
 		<script type="module">
-			import {createDialog} from "./customdialogs.js";
+			import {createDialog} from "./scripts/customdialogs.js";
 
 			window.addEventListener("DOMContentLoaded", init);
 
@@ -22,19 +17,19 @@
 
 				let alertBtn = document.querySelector("#alert");
 				alertBtn.addEventListener("click", () => {
-					createDialog("Alert pressed!");
+					createDialog("#alert-template", "Alert pressed!");
 				});
 
 				let confirmBtn = document.querySelector("#confirm");
 				confirmBtn.addEventListener("click", () => {
-					createDialog("Confirm or cancel?", true, false, (result, form) => {
+					createDialog("#confirm-template", "Confirm or cancel?", (result, form) => {
 						output.innerText = `Confirm returned: ${result}`;
 					});
 				});
 
 				let promptBtn = document.querySelector("#prompt");
 				promptBtn.addEventListener("click", () => {
-					createDialog("Enter a value:", true, true, (result, form) => {
+					createDialog("#prompt-template", "Enter a value:", (result, form) => {
 						if (result) {
 							let input = DOMPurify.sanitize(form);
 							output.innerHTML = `User input: ${input}`;
@@ -56,16 +51,23 @@
 			<hr>
 			<output id="prompt-output"></output>
 		</main>
-		<template id="dialog-template">
-			<dialog>
-				<form method="dialog">
-					<p id="message"></p>
-					<input id="prompt-input" name="prompt-input" class="hidden" disabled>
-					<hr>
-					<input type="submit" value="OK" id="submit">
-					<input type="submit" value="Cancel" class="hidden" id="cancel" disabled>
-				</form>
-			</dialog>
+		<template id="alert-template">
+			<p id="message"></p>
+			<hr>
+			<input type="submit" value="OK" id="submit">
+		</template>
+		<template id="confirm-template">
+			<p id="message"></p>
+			<hr>
+			<input type="submit" value="OK" id="submit">
+			<input type="submit" value="Cancel" id="cancel">
+		</template>
+		<template id="prompt-template">
+			<p id="message"></p>
+			<input id="prompt-input" name="prompt-input" class="hidden">
+			<hr>
+			<input type="submit" value="OK" id="submit">
+			<input type="submit" value="Cancel" id="cancel">
 		</template>
 	</body>
 </html>
