@@ -31,7 +31,7 @@
 				promptBtn.addEventListener("click", () => {
 					createDialog("#prompt-template", "Enter a value:", (result, form) => {
 						if (result) {
-							let input = DOMPurify.sanitize(form);
+							let input = DOMPurify.sanitize(form.get("prompt-input"));
 							output.innerHTML = `User input: ${input}`;
 						}
 						else {

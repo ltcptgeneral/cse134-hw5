@@ -21,7 +21,7 @@ export function createDialog (template, message, callback=()=>{}) {
 	dialog.querySelector("#message").innerText = message;
 	if (callback) {
 		dialog.addEventListener("close", () => {
-			callback(dialog.returnValue === "OK", (new FormData(form)).get("prompt-input"));
+			callback(dialog.returnValue === "OK", new FormData(form));
 			dialog.remove();
 		});
 	}
