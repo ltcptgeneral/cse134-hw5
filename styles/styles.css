@@ -1,0 +1,95 @@
+/*
+Common styles across all pages, primarily content size and color and basic page layout styling
+*/
+
+/* Custom colors, which can be easily changed here */
+:root {
+	--main-bg-color: white;
+	--main-text-color: black;
+	--accent-bg-color: black;
+	--accent-text-color: #AAAAFF;
+}
+
+/* Set default font and font weight */
+* {
+	font-family: 'FreeMono', monospace;
+	font-weight: 600;
+}
+
+/* Set font size for common content items h1, h2, h3, p (aim for larger text) */
+h1 {
+	text-align: center;
+	font-size: 4rem;
+}
+h2 {
+	text-align: center;
+	font-size: 2rem;
+}
+h3 {
+	text-align: center;
+	font-size: 1.5rem;
+}
+p {
+	font-size: 1.25rem;
+}
+
+/* 
+Styles to set the generic page layout, use a grid layout for body to ensure the footer stays in the bottom 
+Also make the header sticky, because users mgiht want navigation in the middle of the page
+*/
+body {
+	margin: 0px;
+	background-color: var(--main-bg-color);
+	color: var(--main-text-color);
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	min-height: 100vh;
+}
+header {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+header, footer {
+	padding: 10px;
+	background-color: var(--accent-bg-color);
+	color: var(--accent-text-color);
+}
+main {
+	padding: 10px;
+	height: 100%;
+}
+
+/* TODO: add responsiveness, temporarily use flex-wrap */
+nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2ch;
+	justify-content: center;
+}
+
+nav a {
+	font-size: x-large;
+	color: var(--accent-text-color);
+	text-decoration: underline 0.1em var(--accent-bg-color);
+  	transition: text-decoration-color 500ms;
+}
+nav a:hover {
+	text-decoration: underline 0.1em var(--accent-text-color);
+}
+
+/* Desktop - restrict content to around 1080px, which should be plenty of space*/
+@media screen and (min-width: 1120px) {
+	main {
+		margin: auto;
+		width: 1080px;
+	}
+}
+/* Tablet or phone - use all of the avaliable space*/
+@media screen and (max-width:1120px) {
+}
+
+/* footer styles */
+footer {
+	text-align: center;
+}

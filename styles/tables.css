@@ -1,0 +1,58 @@
+/*
+Styles for tables, which are made more responsive
+*/
+@media screen and (min-width: 480px) {
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+		width: 100%;
+		border: 1px solid var(--table-accent-color);
+	}
+	th, td {
+		text-align: left;
+		padding: 8px;
+	}
+	th {
+		background-color: var(--table-accent-color);
+	}
+	tr:first-child {
+		border-top: 1px solid white;
+	}
+	tr {
+		border-bottom: 1px solid white;
+	}
+}
+/* I want to make the table more viewable on mobile, code largely adopted from https://css-tricks.com/responsive-data-tables/ */
+/* Change table structure if using a very small viewport */
+@media screen and (max-width: 480px) {
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr {
+		visibility: hidden;
+		height: 0px;
+	}
+	tr:first-child {
+		border-top: 1px solid black;
+	}			
+	tr {
+		border-bottom: 1px solid black;
+	}		
+	table.labeled td {
+		/* Behave  like a "row" */
+		position: relative;
+		padding-left: 50%;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	td:before {
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 10px;
+		left: 10px;
+		width: 45%;
+	}
+}

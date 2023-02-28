@@ -1,0 +1,77 @@
+/*
+Styles for content cards, which are cards of twofold content. 
+Each card contains 2 halves, each can be populated with any content.
+Cards alternate style from flat to popped out
+*/
+
+:root {
+	--card-bg-color: #222222;
+	--card-text-color: white;
+}
+
+.single {
+	margin-top: 40px;
+	margin-bottom: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 60ch;
+	width: fit-content;
+}
+
+.card {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	background-color: var(--card-bg-color);
+	color: var(--card-text-color);
+	border-radius: 40px;
+	padding: 20px;
+}
+/* Desktop card -> side by side */
+@media screen and (min-width: 850px) {
+	/* Use grid view to show halves side by side, each with 50% of the space */
+	.card {
+		display: grid;
+		grid-template-columns: 50% 50%;
+		justify-items: center;
+		align-items: center;
+	}
+	.card img {
+		max-width: min(100%, 400px);
+		width: 25vw;
+		height: auto;
+	}
+}
+/* Phone or tablet card -> top to bottom */
+@media screen and (max-width: 850px) {
+	/* Use grid view to show halves side by side, each with 50% of the space */
+	.card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.card img {
+		max-width: min(100%, 400px);
+		width: 50vh;
+		height: auto;
+	}
+}
+/* Ensure halves are no more than 60 characters, and ensure 20px of separation between halves */
+.card > * {
+	width: fit-content;
+	max-width: 60ch;
+	margin: 20px;
+}
+.card > * > *:first-child {
+	margin-top: 0px;
+}
+.card > * > *:last-child {
+	margin-bottom: 0px;
+}
+.card img {
+	border-radius: 20px;
+}
+.card[data-reverse] {
+	flex-direction: column-reverse;
+}

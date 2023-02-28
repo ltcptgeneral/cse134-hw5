@@ -1,112 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width">
-		<title>About Me - Arthur Lu</title>
-		<link rel="stylesheet" href="style.css" type="text/css">
-		<link rel="icon" type="image/x-icon" href="/images/favicon.svg">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="styles/styles.css">
+		<link rel="stylesheet" href="styles/cards.css">
+		<link rel="stylesheet" href="styles/tables.css">
+		<title>Document</title>
 		<style>
-			@media screen and (min-width: 702px) {
-				table {
-					border-collapse: collapse;
-					border-spacing: 0;
-					width: 100%;
-					border: 1px solid #ddd;
-				}
-				th, td {
-					text-align: left;
-					padding: 8px;
-				}
-				th {
-					background-color: #DDD;
-				}
-				tr:nth-child(even) {
-					background-color: #DDD;
-				}
-			}
-			/* I want to make the table more viewable on mobile, code largely adopted from https://css-tricks.com/responsive-data-tables/ */
-			@media screen and (max-width: 702px) {
-				/* Force table to not be like tables anymore */
-				table, thead, tbody, th, td, tr {
-					display: block;
-				}
-				/* Hide table headers (but not display: none;, for accessibility) */
-				thead tr {
-					visibility: hidden;
-					height: 0px;
-				}				
-				tr:nth-child(odd) {
-					background: #DDD;
-				}			
-				td {
-					/* Behave  like a "row" */
-					position: relative;
-					padding-left: 50%;
-					padding-top: 10px;
-					padding-bottom: 10px;
-				}
-				td:before {
-					/* Now like a table header */
-					position: absolute;
-					/* Top/left values mimic padding */
-					top: 10px;
-					left: 10px;
-					width: 45%;
-				}
-				td:nth-of-type(1):before { content: "Language"; }
-				td:nth-of-type(2):before { content: "Experience"; }
-				td:nth-of-type(3):before { content: "Frameworks"; }
+			@media screen and (max-width: 480px) {
+				#skills-table td:nth-of-type(1):before { content: "Language"; }
+				#skills-table td:nth-of-type(2):before { content: "Experience"; }
+				#skills-table td:nth-of-type(3):before { content: "Frameworks"; }
 			}
 		</style>
 	</head>
 	<body>
-		<div id="layout-wrapper">
-		<div id="header-full">
-			<header>
-				<h1>Arthur Lu</h1>
-				<nav role="menu">
-					<a href="index.html" role="menuitem" aria-current="page">About Me</a>
-					<a href="contact.html" role="menuitem">Contact Me</a>
-					<a href="portfolio.html" role="menuitem">My Projects</a>
-				</nav>
-			</header>
-		</div>
+		<header>
+			<nav>
+				<a href="#mission">Mission</a>
+				<a href="#education">Education</a>
+				<a href="#skills">Skills</a>
+				<a href="#projects">Projects</a>
+				<a href="#interests">Interests</a>
+				<a href="#contact">Contact</a>
+			</nav>
+		</header>
 		<main>
-			<section id="buisness-card">
+			<div class="card">
 				<picture>
 					<source media="screen and (min-width: 480px)" srcset="images/photo_200px.webp">
 					<source media="screen and (min-width: 0px)" srcset="images/photo_100px.webp">
-					<img src="images/photo.webp" alt="A portrait photo of Arthur Lu" style="border-radius: 50%;">
+					<img src="images/photo.webp" alt="A portrait photo of Arthur Lu" style="border-radius: 20px;">
 				</picture>
 				<div>
-					<h3>Arthur Lu</h3>
-					<ul>
-					<li><img src="images/email.svg" alt="Email"><a href="mailto:root@tronnet.net">root@tronnet.net</a></li>
-					<li><img src="images/github.svg" alt="GitHub"><a href="https://github.com/ltcptgeneral/">ltcptgeneral</a></li>
+					<h1>Arthur Lu</h1>
+					<ul style="font-size: 2rem; list-style-type: none; padding: 0px;">
+						<li>Developer</li>
+						<li>Engineer</li>
+						<li>Problem Solver</li>
 					</ul>
 				</div>
-			</section>
-			<hr>
-			<div>
-				<section id="about-me">
-					<h2>About Me</h2>
-					<p>
-						I am a 3rd year <strong>Computer Engineering</strong> major at the University of California San Diego
-						I am interested in Machine Learning, cloud technologies, and distributed computing. 
-						I have experience with common technologies like Docker, lxc, nginx, and VMWare ESXi.
-
-						<!-- This span will have some special formatting, maybe a different color -->
-						<!-- This span could be automatically populated based on the most recent commit to github? -->
-						I am currently working on <span id="current-project"><a href="https://github.com/tronnet-gh/ProxmoxAAS-Client">ProxmoxAAS-Client</a>, a simplified user interface for users of a Proxmox based compute on demand service.</span>
-
-						<em>I also run <a href="https://tronnet.net">tronnet</a>, a cheap and personalized virtual lab provider.</em>
-					</p>
-				</section>
-				<hr>
-				<section id="tech-skills">
-					<h2>Languages and Skills</h2>
-					<table id="skills-table-wide">
+			</div>
+			<div class="single" id="mission">
+				<h2>My Mission</h2>
+				<p>I am a 3rd year <strong>Computer Engineering</strong> major at the University of California San Diego looking for opportunites in software development and system design.</p>
+			</div>
+			<div class="single" id="education">
+				<h2>My Education</h2>
+				<p>3rd year Computer Engineering Major at UCSD</p>
+				<p>GPA: 3.9</p>
+			</div>
+			<div class="card" id="skills">
+				<div>
+					<h2>My Languages and Skills</h2>
+				</div>
+				<div>
+					<table id="skills-table" class="labeled">
 						<colgroup>
 							<col span="1">
 							<col span="2">
@@ -141,12 +91,46 @@
 							</tr>
 						</tbody>
 					</table>
-				</section>
+					<p>I also have experience with common technologies like Docker, lxc, nginx, and VMWare ESXi.</p>
+				</div>
+			</div>
+			<div class="card" id="projects">
+				<div>
+					<h2>My Projects</h2>
+				</div>
+				<div>
+					<a href="projects.html">Browse</a>
+				</div>
+			</div>
+			<div class="single" id="interests">
+				<h2>My Interests</h2>
+				<p>I am interested in Machine Learning, cloud technologies, and distributed computing.</p>
+			</div>
+			<div class="card" id="contact">
+				<div>
+					<h2>Contact Me</h2>
+				</div>
+				<div>
+					<table id="skills-table-wide">
+						<colgroup>
+							<col span="1">
+							<col span="2">
+						</colgroup>
+						<tbody>
+							<tr>
+								<td>Email</td>
+								<td><a href="mainto:root@tronnet.net">root@tronnet.net</a></td>
+							</tr>
+							<tr>
+								<td>GitHub</td>
+								<td><a href="https://github.com/ltcptgeneral">ltcptgeneral</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</main>
-		<footer>
-			<p>&copy; 2023 Arthur Lu</p>
-		</footer>
-		</div>
+
+		<footer>&copy; 2023 - Arthur Lu</footer>
 	</body>
 </html>
