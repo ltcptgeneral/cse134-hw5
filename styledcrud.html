@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>HW4 - CRUD</title>
+		<link rel="icon" type="image/x-icon" href="/images/favicon.svg">
+		<script src="scripts/customdialogs.js" type="module"></script>
+		<script src="scripts/styledblog.js" type="module"></script>
+		<script type="text/javascript" src="DOMpurify/purify.min.js"></script>
+		<link rel="stylesheet" href="styledcrud.css" type="text/css">
+	</head>
+	<body>
+		<header>
+			<h1>Blog Posts</h1>
+		</header>
+		<main>
+			<ul id="posts"></ul>
+			<img type="button" id="add-post" src="images/add.svg" width="64px" height="64px">
+		</main>
+		</div>
+		<template id="blog-template">
+			<h2 id="message"></h2>
+			<div class="input-grid" style="grid-template-columns: auto 1fr;">
+				<label for="title">Post Title: </label><input id="title" name="title" type="text" required>
+				<label for="date">Post Date: </label><input id="date" name="date" type="date" required>
+				<label for="summary">Post Summary: </label><textarea id="summary" name="summary" required></textarea>
+			</div>
+			<hr>
+			<div class="btn-group">
+				<input type="submit" value="OK" id="submit">
+				<input type="submit" value="Cancel" id="cancel" formnovalidate>
+			</div>
+		</template>
+		<template id="confirm-template">
+			<p id="message"></p>
+			<hr>
+			<input type="submit" value="OK" id="submit">
+			<input type="submit" value="Cancel" id="cancel">
+		</template>
+	</body>
+</html>
