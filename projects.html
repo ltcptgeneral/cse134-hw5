@@ -17,46 +17,15 @@
 			</nav>
 		</header>
 		<main>
-			<div class="flexbox">
-				<!-- Sample project instances included, eventually it wil be populated automatically -->
-				<article>
-					<!-- The link around the project title will eventually be an onclick listener on the entire article -->
-					<h2><a href="https://github.com/ltcptgeneral/project1">Project 1</a></h2>
-					<p>sample project 1, a description taken either from the github or readme</p>
-					<ul>
-						<li>tag 1</li>
-						<li>tag 2</li>
-						<li>tag 3</li>
-					</ul>
-				</article>
-				<article>
-					<h2><a href="https://github.com/ltcptgeneral/project2">Project 2</a></h2>
-					<p>sample project 2, a description taken either from the github or readme</p>
-					<ul>
-						<li>tag 1</li>
-						<li>tag 2</li>
-						<li>tag 3</li>
-					</ul>
-				</article>
-				<article>
-					<h2><a href="https://github.com/ltcptgeneral/project3">Project 3</a></h2>
-					<p>sample project 3, a description taken either from the github or readme</p>
-					<ul>
-						<li>tag 1</li>
-						<li>tag 2</li>
-						<li>tag 3</li>
-					</ul>
-				</article>
+			<div class="flexbox" id="projects">
 			</div>
 		</main>
 		<footer>&copy; 2023 - Arthur Lu</footer>
-		<!-- This template will be used later by JS to create a custom element to hold each project preview -->
 		<template id="project-article">
 			<article>
 				<h2 id="project-name"></h2>
 				<p id="project-desc"></p>
-				<ul id="project-tags">
-				</ul>
+				<p id="project-lang"></p>
 			</article>
 		</template>
 	</body>
