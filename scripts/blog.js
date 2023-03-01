@@ -83,7 +83,7 @@ function updatePost (id, post) {
 			break;
 		}
 	}
-	if (index) {
+	if (index != null) {
 		posts[index] = post;
 		saveAllPosts(posts);
 		return true;
@@ -100,7 +100,7 @@ function deletePost (id) {
 			break;
 		}
 	}
-	if (index) {
+	if (index != null) {
 		posts.splice(index, 1);
 		saveAllPosts(posts);
 		return true;
